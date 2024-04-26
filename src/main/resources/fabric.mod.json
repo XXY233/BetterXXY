@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "betterxxy",
+  "version": "${version}",
+  "name": "BetterXXY",
+  "description": "",
+  "authors": [
+    "XXY"
+  ],
+  "contact": {
+    "repo": "https://github.com/XXY233/BetterXXY"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/betterxxy/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.xxy233.betterxxy.client.BetterXXYClient"
+    ],
+    "main": [
+      "io.github.xxy233.betterxxy.BetterXXY"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
