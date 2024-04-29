@@ -1,8 +1,12 @@
 pluginManagement {
     repositories {
         maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
+            name = "lss233Mirror"
+            url = uri("https://crystal.app.lss233.com/repositories/minecraft")
+        }
+        maven {
+            name = "Hanbings Proxy"
+            url = uri("https://repository.hanbings.io/proxy")
         }
         gradlePluginPortal()
     }

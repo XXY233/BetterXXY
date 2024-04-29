@@ -1,29 +1,34 @@
 {
   "schemaVersion": 1,
-  "id": "betterxxy",
+  "id": "rapidglassmining",
   "version": "${version}",
-  "name": "BetterXXY",
-  "description": "",
+  "name": "RapidGlassMining",
+  "description": "Use a hoe to quickly dig up glass",
   "authors": [
-    "XXY"
+    "XXY",
+    "lushangkan"
   ],
   "contact": {
     "repo": "https://github.com/XXY233/BetterXXY"
   },
-  "license": "All-Rights-Reserved",
+  "license": "GPLv3",
   "icon": "assets/betterxxy/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "io.github.xxy233.betterxxy.client.BetterXXYClient"
-    ],
     "main": [
-      "io.github.xxy233.betterxxy.BetterXXY"
+      {
+        "adapter": "kotlin",
+        "value": "io.github.xxy233.rapidglassmining.RapidGlassMining"
+      }
     ]
   },
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
-  }
+    "minecraft": ">=1.20",
+    "fabric-language-kotlin": ">=1.10.19+kotlin.1.9.23"
+  },
+  "mixins": [
+    "rapidglassmining.mixins.json"
+  ]
 }
