@@ -1,6 +1,7 @@
 plugins {
-    id 'fabric-loom' version '1.5-SNAPSHOT'
+    id 'fabric-loom' version '1.3.1'
     id 'maven-publish'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.23'
 }
 
 version = project.mod_version
@@ -11,11 +12,39 @@ base {
 }
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+    mavenLocal()
+
+    maven {
+        name = "lss233Mirror"
+        url = uri("https://crystal.app.lss233.com/repositories/minecraft")
+    }
+    maven {
+        name = "Hanbings Proxy"
+        url = uri("https://repository.hanbings.io/proxy")
+    }
+    maven {
+        name = "Aliyun Public"
+        url = uri("https://maven.aliyun.com/repository/public")
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+
+        maven {
+            name = "lss233Mirror"
+            url = uri("https://crystal.app.lss233.com/repositories/minecraft")
+        }
+        maven {
+            name = "Hanbings Proxy"
+            url = uri("https://repository.hanbings.io/proxy")
+        }
+        maven {
+            name = "Aliyun Public"
+            url = uri("https://maven.aliyun.com/repository/public")
+        }
+    }
 }
 
 dependencies {
@@ -26,6 +55,8 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    modImplementation("net.fabricmc:fabric-language-kotlin:1.10.19+kotlin.1.9.23")
 }
 
 processResources {
