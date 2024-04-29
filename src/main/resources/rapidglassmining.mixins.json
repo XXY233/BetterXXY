@@ -3,6 +3,7 @@
   "package": "io.github.xxy233.rapidglassmining.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "MiningToolItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
