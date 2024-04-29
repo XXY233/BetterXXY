@@ -1,5 +1,6 @@
 package io.github.xxy233.rapidglassmining.mixin;
 
+import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
@@ -17,7 +18,7 @@ public class MiningToolItemMixin {
     @Inject(method = "getMiningSpeedMultiplier(Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/BlockState;)F", at = @At("HEAD"), cancellable = true)
     public void onGetMiningSpeedMultiplier(ItemStack stack, BlockState state, CallbackInfoReturnable<Float> cir) {
         MiningToolItem miningToolItem = (MiningToolItem)(Object)this;
-        if (miningToolItem instanceof HoeItem && Registries.BLOCK.getId(state.getBlock()).getPath().equals("glass")) {
+        if (miningToolItem instanceof HoeItem && state.getBlock() instanceof AbstractGlassBlock) {
             cir.setReturnValue(9999F);
         }
     }
